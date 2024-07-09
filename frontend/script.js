@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function cargarUsuarios() {
     try {
-        const response = await fetch('http://localhost:5000/api/users'); // URL completa
+        const response = await fetch('https://backendf-3ep4.onrender.com/api/users'); // URL completa
         if (!response.ok) {
             throw new Error('Error al cargar usuarios');
         }
@@ -37,7 +37,7 @@ async function agregarUsuario(event) {
     const dni = document.getElementById('dni').value;
 
     try {
-        const response = await fetch('http://localhost:5000/api/users', { // URL completa
+        const response = await fetch('https://backendf-3ep4.onrender.com/api/users', { // URL completa
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ async function agregarUsuario(event) {
 
 async function eliminarUsuario(id) {
     try {
-        const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+        const response = await fetch(`https://backendf-3ep4.onrender.com/api/users/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ async function eliminarUsuario(id) {
 
         const data = await response.json();
         console.log('Usuario eliminado:', data);
-        // Actualiza la interfaz de usuario según sea necesario
+        cargarUsuarios(); // Actualizar la lista de usuarios después de eliminar uno
     } catch (error) {
         console.error('Error:', error);
         alert('Error al eliminar usuario');
@@ -80,4 +80,3 @@ async function eliminarUsuario(id) {
 }
 
 document.getElementById('deleteButton').addEventListener('click', () => eliminarUsuario(1));
-
