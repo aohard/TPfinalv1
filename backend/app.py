@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:password@postgres/dbname'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://users_0l21_user:NugJUV6TkMbkAhmtp0tdq3lDjTBTrA6Y@dpg-cq67jsks1f4s73dtu69g-a.oregon-postgres.render.com/users_0l21'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -47,4 +47,4 @@ def delete_user(id):
     return jsonify({'message': 'User deleted'}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.

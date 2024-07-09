@@ -5,9 +5,9 @@ services:
     image: postgres:13
     container_name: postgres
     environment:
-      POSTGRES_DB: dbname
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: users_0l21
+      POSTGRES_USER: users_0l21_user
+      POSTGRES_PASSWORD: NugJUV6TkMbkAhmtp0tdq3lDjTBTrA6Y
     ports:
       - "5432:5432"
     volumes:
